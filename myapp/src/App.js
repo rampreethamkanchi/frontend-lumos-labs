@@ -1,24 +1,26 @@
-import logo from "./logo.svg";
 import "./App.css";
 import React, { useState } from "react";
 
 function App() {
-    const [data, setData] = useState(0);
-
-    function getQuote() {
-        fetch("https://api.quotable.io/random")
-            .then((response) => response.json())
-            .then((quote) => {
-                setData(quote.content);
-            });
+    const [quoteState, setQuote]=useState("Click below to get Quote ");
+    const [authorState, setAuthor]=useState("");
+    async function clickHandler(){
+        let someResult = await fetch("https://api.quotable.io/random");
+        // console.log('jsonResult:', jsonResult)
+        let res = await someResult.json();
+        let quote = res.content;
+        let author = res.author;
+        // console.log(quote);
+        setQuote(quote);
+        setAuthor(author);
     }
-
+   
     return (
         <div className="App">
-            <header className="App-header">
-                <h3>{data}</h3>
-                <button onClick={getQuote}>Get Quote</button>
-            </header>
+            <h1 id="header">This is where you get your daily quotes</h1>
+            <p id="quote" className="content"><b>QUOTE</b> : {quoteState}</p>
+            <p id="author" className="content"><b>AUTHOR</b> : <i>{authorState}</i></p>
+            <button onClick={clickHandler} id="button">Click Me</button>
         </div>
     );
 }
