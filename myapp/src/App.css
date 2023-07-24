@@ -16,12 +16,8 @@ body{
   margin: 1rem;
 }
 #quote{
-  font-size: 2rem;
-  padding: 1rem;
-}
-#author{
-  font-size: 1.5rem;
-  padding: 10px;
+  font-size: 1.3rem;
+  padding: 0.5rem;
 }
 #button{
   background-color: blue;
@@ -30,4 +26,26 @@ body{
   color: white;
   font-size: 2rem;
   border-radius: 1.2rem;
+}
+#quoteLabel{
+  
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+#authorLabel{
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.margin{
+  margin: 1rem;
+}
+#forQuote{
+  font-size: 1.3rem;
+  font-family: Arial, Helvetica, sans-serif;
+}
+#forAuthor{
+  font-size: 1.3rem;
+  font-family: Arial, Helvetica, sans-serif;
 }
